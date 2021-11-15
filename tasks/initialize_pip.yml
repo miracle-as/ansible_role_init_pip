@@ -1,0 +1,15 @@
+- name: build_virtual_environments | check if we're building on a supported os
+  assert:
+    fail_msg: "{{ role_name }} only supports ubuntu versions 16, 18, 20 and centos versions 6, 7!"
+    success_msg: "{{ role_name }} supports {{ ansible_distribution }} version {{ ansible_distribution_version }}"
+    quiet: "{{ not ansible_check_mode }}"
+    that:
+      ( ansible_distribution == "Ubuntu" and ansible_distribution_version|int in [16, 18, 20] )
+      or ( ansible_distribution == "CentOS" and ansible_distribution_major_version|int in [7, 8] )
+      or ( ansible_distribution|lower == "redhat" and ansible_distribution_major_version|int in [8] )
+
+- name: init_pip | Install python3 and pip
+  pgk:
+          - "python3"
+          - "python3-pip"
+
