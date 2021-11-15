@@ -17,21 +17,7 @@
     - "git"
     - "python3-pip"
     - "python3-devel"
-    - "make" 
-    - "autoconf" 
-    - "automake" 
-    - "libtool" 
-    - "gcc"
-    - "zlib-devel"
-    - "rpm-build"
-    - "tree"
     - "python3-virtualenv"
-    - "help2man"
-    - "scl-utils-build"
-    - "scl-utils"
-    - "libffi-devel"
-    - "createrepo"
-    - "python2-psycopg2"
   become: True
 
 - name: Init python env | Update pip
