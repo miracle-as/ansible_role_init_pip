@@ -33,3 +33,7 @@
     - "createrepo"
     - "python2-psycopg2"
   become: True
+
+- name: Init python env | Update pip
+  pip:
+    name: pip
