@@ -18,7 +18,6 @@
     - "python3-pip"
     - "python3-devel"
     - "python3-virtualenv"
-  become: True
 
 - name: Init python env | Update pip
   pip:
